@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  stats-converter:
+    image: my-converter
+    build: ./build
+    volumes:
+      - ./scripts/:/mnt/scripts
+      - ${DATA_FOLDER}:/mnt/data
+    entrypoint: /mnt/scripts/entrypoint.sh
